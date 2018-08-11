@@ -12,6 +12,7 @@ variable "web_subnets_cird" {
   type    = "list"
   default = ["10.20.0.0/24", "10.20.1.0/24"]
 }
+<<<<<<< HEAD
 
 variable "rds_subnets_cird" {
   type    = "list"
