@@ -13,6 +13,11 @@ variable "web_subnets_cird" {
   default = ["10.20.0.0/24", "10.20.1.0/24"]
 }
 
+variable "rds_subnets_cird" {
+  type    = "list"
+  default = ["10.20.2.0/24", "10.20.3.0/24"]
+}
+
 variable "azs" {
   default = ["ap-south-1a", "ap-south-1b"]
 }
