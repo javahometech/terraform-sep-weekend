@@ -12,7 +12,6 @@ variable "web_subnets_cird" {
   type    = "list"
   default = ["10.20.0.0/24", "10.20.1.0/24"]
 }
-<<<<<<< HEAD
 
 variable "rds_subnets_cird" {
   type    = "list"
@@ -25,3 +24,11 @@ variable "azs" {
 
 # Get list of Availability Zones based on provider region
 data "aws_availability_zones" "azs" {}
+
+variable "ec2_instance_type" {
+  default = "t2.micro"
+}
+
+variable "web_ami" {
+  default = "ami-5a8da735"
+}

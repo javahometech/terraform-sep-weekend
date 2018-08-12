@@ -5,22 +5,22 @@ resource "aws_key_pair" "developer" {
   public_key = "${file("c:/Users/lenovo/hari-aws.pub")}"
 }
 
-# Add 2 EC2 instances one in each public subnet
-resource "aws_instance" "webservers" {
-  count         = 2
-  ami           = "ami-5a8da735"
-  instance_type = "t2.micro"
-  subnet_id     = "${aws_subnet.web_subnets.*.id[count.index]}"
-
-  key_name  = "${aws_key_pair.developer.key_name}"
-  user_data = "${file("scripts/install_httpd.sh")}"
-
-  vpc_security_group_ids = ["${aws_security_group.allow_http.id}"]
-
-  tags {
-    Name = "Webserver-${count.index + 1}"
-  }
-}
+# # Add 2 EC2 instances one in each public subnet
+# resource "aws_instance" "webservers" {
+#   count         = 2
+#   ami           = "ami-5a8da735"
+#   instance_type = "t2.micro"
+#   subnet_id     = "${aws_subnet.web_subnets.*.id[count.index]}"
+#
+#   key_name  = "${aws_key_pair.developer.key_name}"
+#   user_data = "${file("scripts/install_httpd.sh")}"
+#
+#   vpc_security_group_ids = ["${aws_security_group.allow_http.id}"]
+#
+#   tags {
+#     Name = "Webserver-${count.index + 1}"
+#   }
+# }
 
 # Add Security Group for Web servers
 

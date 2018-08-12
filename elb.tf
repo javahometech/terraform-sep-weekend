@@ -19,7 +19,7 @@ resource "aws_elb" "myapp_elb" {
     interval            = 20
   }
 
-  instances                   = ["${aws_instance.webservers.*.id}"]
+  # instances                   = ["${aws_instance.webservers.*.id}"]
   cross_zone_load_balancing   = true
   idle_timeout                = 60
   connection_draining         = true
